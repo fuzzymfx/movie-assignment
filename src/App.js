@@ -11,7 +11,8 @@ function App() {
   const [movieRating, setMovieRating] = React.useState("");
   const [movieTotalVotes, setMovieTotalVotes] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
-  const movielist = [
+  const [searchTerm, setSearchTerm] = React.useState("");
+  const [movielist, setMovielist] = React.useState([
     "Cruella",
     "The Unholy",
     "Army of the Dead",
@@ -24,28 +25,42 @@ function App() {
     "The Virtuoso",
     "Nobody",
     "Demon Slayer: Kimetsu no Yaiba: The Movie: Mugen Train",
-  ];
+  ]);
 
   React.useEffect(() => {
-    movielist.map(async (movie) => {
-      console.log(movie);
-      const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${movie}&page=1`;
+    if (searchTerm === "") {
+      movielist.map(async (movie) => {
+        console.log(movie);
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${movie}&page=1`;
+        const response = await fetch(url);
+        const data = await response.json();
+        setMovies((prevState) => [...prevState, data.results[0]]);
+      });
+    }
+  }, [movielist, searchTerm]);
+  React.useEffect(() => {
+    const search = async () => {
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchTerm}&page=1`;
       const response = await fetch(url);
       const data = await response.json();
-      setMovies((prevState) => [...prevState, data.results[0]]);
-    });
-  }, []);
+      setMovies(data.results);
+    };
+    if (searchTerm) {
+      search();
+    }
+  }, [movies, searchTerm]);
   console.log(movies);
   return (
     <>
       <div className="container">
         <div className="header">
-          <div className="logo">
+          <a href="/" className="logo">
             <img src={logo} alt="logo" />
-          </div>
+          </a>
           <div className="search-bar">
             <img src={search} className="search-bar-img" alt="search" />
-            <input type="text" placeholder="Search for a movie" />
+            <input type="text" placeholder="Search for a movie"
+              onChange={(e) => setSearchTerm(e.target.value)} />
           </div>
         </div>
 
