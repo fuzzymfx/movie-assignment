@@ -98,7 +98,12 @@ function App() {
                         backgroundPosition: "center",
                         width: "100%",
                       }}
-                    ></div>
+                    >
+
+                      <div className="rating">
+                        <span>{movie.vote_average}</span>
+                      </div>
+                    </div>
                     <div>
                       <h5 className="movie-info">{movie.title}</h5>
                     </div>
