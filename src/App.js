@@ -8,6 +8,7 @@ function App() {
   const [moviePoster, setMoviePoster] = React.useState('')
   const [movieOverview, setMovieOverview] = React.useState('')
   const [movieReleaseDate, setMovieReleaseDate] = React.useState('')
+  const [movieRating, setMovieRating] = React.useState('')
   const [isLoading, setIsLoading] = React.useState(false)
   const movielist = [
     "Cruella",
@@ -46,6 +47,7 @@ function App() {
                   setMoviePoster(movie.poster_path)
                   setMovieOverview(movie.overview)
                   setMovieReleaseDate(movie.release_date)
+                  setMovieRating(movie.vote_average)
                   setIsLoading(true)
                 }
                 }
@@ -71,8 +73,16 @@ function App() {
             <button type="button" className="btn-close" onClick={() => setIsLoading(false)}></button>
             <h5 className="modal-title">{movieName}</h5>
             <div className="modal-content">
-              <img src={`https://image.tmdb.org/t/p/w500${moviePoster}`} className="modalposter" alt={movieName} />
-              <p className='modal-body'>{movieOverview}</p>
+              <div >
+                <img className="modalposter" src={`https://image.tmdb.org/t/p/w500${moviePoster}`} alt={movieName} />
+              </div>
+              <div className='modal-body'>
+                <span style={{
+                  fontWeight: 'bold',
+                }}> Release Date:</span> {movieReleaseDate}
+                <p >{movieOverview}</p>
+                {movieRating}
+              </div>
             </div>
           </div>
         )}
