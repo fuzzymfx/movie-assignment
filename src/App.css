@@ -1,19 +1,41 @@
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   /* align-items: center; */
   height: 100%;
-  background-color: #E1E3E6;
   padding: 20px;
 }
 
-.logo {
+
+.header {
   display: flex;
-  justify-content: start;
-  flex-direction: row;
+  width: 100%;
+  border-bottom: 1px solid #c0c4cc;
+}
+
+.logo {
+  justify-self: flex-start;
+}
+
+.search-bar {
   align-items: center;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
+  display: flex;
+  color: #898e9a;
+  margin-left: auto;
+}
+
+.search-bar-img {
+  width: 16px;
+  color: #898e9a;
+  position: absolute;
+  margin-left: 8px;
+}
+
+.search-bar input {
+  width: 180px;
+  height: 36px;
+  padding-left: 30px;
 }
 
 .movies {
@@ -21,50 +43,64 @@
   display: inline-block;
   display: grid;
   align-items: center;
-  grid-gap: 10px;
+  grid-gap: 25px;
   width: fit-content;
   height: fit-content;
+  justify-content: center;
 }
 
 .movie-card {
   background-color: #fff;
-  padding: 10px;
-  height: 348px;
-  width: 282px;
+  /* padding: 10px; */
+  height: fit-content;
+  /* width: 282px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 5px;
   border-radius: 5px;
 }
 
 .movie-card:hover {
+  /* border: 1px solid ; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .movie-info {
   margin: 0 0 0 0;
   padding: 5px;
+  text-align: center;
 }
 
 .image {
   width: 280px;
   height: 302px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .movie-info {
   white-space: wrap;
-
 }
 
 .modal {
   position: absolute;
-  padding: 10px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 5px;
-  max-width: 583px;
+  max-width: 600px;
+  backdrop-filter: black;
+}
+
+.modal-body {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 .modalposter {
@@ -87,19 +123,22 @@
   margin: 10px;
   width: 15px;
   height: 15px;
-  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #141e35;
   background: url(./Assets/Images/cross.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.logo {
-  position: absolute;
-  width: 156px;
-  height: 54px;
-  left: 121px;
-  top: 11px;
-  background: url(./Assets/Images/logo.png);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  border-radius: 10px;
+.modal-title {
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 480px) {
