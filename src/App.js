@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-// import logo from './Assets/Images/logo.png';
+import logo from './Assets/Images/logo.png';
 
 function App() {
   const [movies, setMovies] = React.useState([])
@@ -38,6 +38,12 @@ function App() {
   return (
     <>
       <div className="container">
+        <div className="header">
+          <div className="logo">
+            <img src={logo} alt="logo" />
+          </div>
+        </div>
+        <h1>Recent Movies</h1>
         <div className="movies">
           {movies.map((movie, index) => {
             return (
