@@ -33,6 +33,8 @@ jobs:
     - run: git stash -m "Deploying the latest build"
     - run: git fetch
     - run: git checkout -b deployment
+    - run: git reset --hard origin/main
+    - run: git config pull.rebase true
     - run: git pull origin deployment
     - run: git stash pop
     - run: git checkout --theirs ./docs/asset-manifest.json
