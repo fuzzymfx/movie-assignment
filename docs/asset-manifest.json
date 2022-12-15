@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/movie-assignment/static/css/main.43c2ba64.css",
+    "main.js": "/movie-assignment/static/js/main.593cc6ad.js",
+    "static/js/787.c8442f27.chunk.js": "/movie-assignment/static/js/787.c8442f27.chunk.js",
+    "index.html": "/movie-assignment/index.html",
+    "static/media/cross.svg": "/movie-assignment/static/media/cross.40ab6adc06a03c6dde22.svg",
+    "main.43c2ba64.css.map": "/movie-assignment/static/css/main.43c2ba64.css.map",
+    "main.593cc6ad.js.map": "/movie-assignment/static/js/main.593cc6ad.js.map",
+    "787.c8442f27.chunk.js.map": "/movie-assignment/static/js/787.c8442f27.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.43c2ba64.css",
+    "static/js/main.593cc6ad.js"
+  ]
+}
