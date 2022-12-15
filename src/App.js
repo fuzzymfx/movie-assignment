@@ -54,7 +54,7 @@ function App() {
     <>
       <div className="container">
         <div className="header">
-          <a href="/" className="logo">
+          <a href="/movie-assignment" className="logo">
             <img src={logo} alt="logo" />
           </a>
           <div className="search-bar">
