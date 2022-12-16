@@ -85,7 +85,7 @@
 }
 
 .modal {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -193,5 +193,7 @@
   .modal-content {
     display: flex;
     flex-direction: column;
+    max-height: 600px;
+    overflow-y: auto;
   }
 }
