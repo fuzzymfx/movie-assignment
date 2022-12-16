@@ -85,9 +85,9 @@
 }
 
 .modal {
-  position: absolute;
-  left: 50%;
+  position: fixed;
   top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
   background-color: #fff;
@@ -95,6 +95,8 @@
   border-radius: 5px;
   max-width: 600px;
   backdrop-filter: black;
+  z-index: 1;
+  margin-top: 50px;
 }
 
 .modal-body {
@@ -112,7 +114,6 @@
   width: 282px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -185,5 +186,12 @@
 @media (min-width: 960px) {
   .movies {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .modal-content {
+    display: flex;
+    flex-direction: column;
   }
 }

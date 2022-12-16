@@ -115,7 +115,7 @@ function App() {
         </div>
         {/* show modal */}
         {isLoading && (
-          <div>
+          <div className="modal-container">
             <div className="modal">
               <div className="modal-header">
                 <h3 className="modal-title">{movieName}</h3>
